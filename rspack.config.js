@@ -64,6 +64,13 @@ export default {
       },
     ],
   },
+  builtins: {
+    css: {
+      modules: {
+        localsConvention: 'camelCase',
+      },
+    },
+  },
   optimization: isDev
     ? {}
     : {
