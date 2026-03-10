@@ -59,17 +59,17 @@ export default {
       },
       {
         test: /\.css$/,
-        use: ['postcss-loader'],
+        use: [
+          {
+            loader: 'builtin:lightningcss-loader',
+            options: {
+              targets: 'defaults',
+            },
+          },
+        ],
         type: 'css',
       },
     ],
-  },
-  builtins: {
-    css: {
-      modules: {
-        localsConvention: 'camelCase',
-      },
-    },
   },
   optimization: isDev
     ? {}
