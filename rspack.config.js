@@ -26,7 +26,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(tsx|ts|jsx|js)$/,
+        test: /\.tsx$/,
         use: {
           loader: 'builtin:swc-loader',
           options: {
@@ -39,6 +39,19 @@ export default {
                 react: {
                   runtime: 'automatic',
                 },
+              },
+            },
+          },
+        },
+      },
+      {
+        test: /\.ts$/,
+        use: {
+          loader: 'builtin:swc-loader',
+          options: {
+            jsc: {
+              parser: {
+                syntax: 'typescript',
               },
             },
           },
